@@ -1,9 +1,7 @@
-FROM python:2.7
+FROM centos/python-27-centos7
 
-MAINTAINER Simon Toivo Telhaug <simon.toivo@gmail.com>
-
-RUN apt-get update \
-&& apt-get install man-db -y
+RUN yum update -y \
+&& yum install man-pages man-db man -y
 
 ADD ./requirements.txt /tmp/requirements.txt
 

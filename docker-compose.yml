@@ -1,7 +1,8 @@
-version: '2'
+version: '3'
 services:
   db:
-    image: mongo
+    image: centos/mongodb-32-centos7
+    # image: mongo
   web:
     build: .
     command: make serve

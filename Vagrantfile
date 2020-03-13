@@ -56,11 +56,11 @@ Vagrant.configure("2") do |config|
     # http://redsymbol.net/articles/unofficial-bash-strict-mode/
     set -euo pipefail
 
-    sudo apt-get update
-    sudo apt-get install -y python-pip mongodb make
+    sudo yum update -y
+    sudo yum install -y python-pip mongodb make
 
     cd /vagrant
-    sudo apt-get install -y build-essential python-dev # so pip doesn't complain
+    sudo yum install -y build-essential python-dev # so pip doesn't complain
     sudo pip install -r requirements.txt
     mongorestore dump/explainshell && mongorestore -d explainshell_tests dump/explainshell
 
